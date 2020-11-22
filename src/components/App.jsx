@@ -39,7 +39,7 @@ function App(){
     return (
         <React.Fragment>
             <NavBar totalCounters={state.counters.filter(c=>c.value>0).length} />
-            <main className="container">
+            <main>
                 <Counters
                  counters={state.counters}                  
                  onReset={handleReset}
