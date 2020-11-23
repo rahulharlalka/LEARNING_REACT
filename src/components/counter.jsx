@@ -7,12 +7,21 @@ function Counter(props){
     }   
 
     return (    
-        <div>    
-            {props.children}    
-            <span  className={getBadgeClasses()}>{formatCount()}</span>
-            <button onClick={()=>props.onIncrement(props.id)} className="btn btn-primary btn-sm m-2">+</button>
-            <button onClick={()=>props.onDecrement(props.id)} className="btn btn-secondary btn-sm m-2">-</button>
-            <button onClick={()=>props.onDelete(props.id)} className="btn btn-danger btn-sm m-2">x</button>            
+        <div className="row">
+            <div className="col-2">
+                <h4>{props.children}</h4>
+            </div>
+            <div className="col-1">
+                <span  className={getBadgeClasses()}>{formatCount()}</span>
+            </div>
+            <div className="col">                
+                <button onClick={()=>props.onIncrement(props.id)} className="btn btn-primary btn-sm m-2">+</button>
+                <button onClick={()=>props.onDecrement(props.id)} className="btn btn-secondary btn-sm m-2">-</button>
+                <button onClick={()=>props.onDelete(props.id)} className="btn btn-danger btn-sm m-2">x</button> 
+            </div>
+            
+             
+                       
         </div>
     )
 

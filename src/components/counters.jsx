@@ -4,7 +4,7 @@ import Counter from "./counter"
 function Counters(props){    
     return (
         <div>
-            <button onClick={props.onReset} className="btn btn-danger btn-sm">Reset</button>
+            
             {props.counters.map(counter=>(
                 <Counter 
                     key={counter.id} 
@@ -17,6 +17,7 @@ function Counters(props){
                     <h4>Counter {counter.id}</h4>
                 </Counter>
             ))}
+            <button onClick={props.onReset} className="btn btn-danger btn-lg">Reset</button>
         </div>
     )
 }
