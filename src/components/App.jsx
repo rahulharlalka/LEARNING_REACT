@@ -7,10 +7,10 @@ function App(){
 
     const [state,setState]=useState({
         counters:[
-            {id:0,value:0},
-            {id:1,value:1},
-            {id:2,value:2},
-            {id:3,value:3}
+            {id:1,value:4},
+            {id:2,value:1},
+            {id:3,value:2},
+            {id:4,value:3}
         ]
     })
 
@@ -19,9 +19,15 @@ function App(){
         setState({counters}); 
     };
 
-    const handleIncrement= counterId =>{
+    const handleIncrement= counter =>{
         const counters =[...state.counters];
-        counters[counterId].value++;
+        let index=-1;
+        for(let i=0;i<counters.length;i++)
+        {
+            if(counters[i].id===counter)
+                index=i;
+        }
+        counters[index].value++;
         setState({counters});
     }
 
@@ -33,6 +39,17 @@ function App(){
         setState({counters});
     }
 
+    const handleDecrement= counter =>{
+        const counters =[...state.counters];
+        let index=-1;
+        for(let i=0;i<counters.length;i++)
+        {
+            if(counters[i].id===counter)
+                index=i;
+        };
+        counters[index].value--;
+        setState({counters});
+    }
 
 
 
@@ -44,6 +61,7 @@ function App(){
                  counters={state.counters}                  
                  onReset={handleReset}
                  onIncrement={handleIncrement} 
+                 onDecrement={handleDecrement}
                  onDelete={handleDelete} />
             </main>
         </React.Fragment>

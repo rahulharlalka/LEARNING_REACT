@@ -11,6 +11,7 @@ function Counters(props){
                     id={counter.id}
                     value={counter.value}
                     onDelete={props.onDelete} 
+                    onDecrement={props.onDecrement}
                     onIncrement={props.onIncrement}
                 >
                     <h4>Counter {counter.id}</h4>
