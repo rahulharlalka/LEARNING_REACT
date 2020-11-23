@@ -15,9 +15,19 @@ function Counter(props){
                 <span  className={getBadgeClasses()}>{formatCount()}</span>
             </div>
             <div className="col">                
-                <button onClick={()=>props.onIncrement(props.id)} className="btn btn-primary btn-sm m-2">+</button>
-                <button onClick={()=>props.onDecrement(props.id)} className="btn btn-secondary btn-sm m-2">-</button>
-                <button onClick={()=>props.onDelete(props.id)} className="btn btn-danger btn-sm m-2">x</button> 
+                <button 
+                    onClick={()=>props.onIncrement(props.id)} 
+                    className="btn btn-primary btn-sm m-2">+
+                </button>
+                <button 
+                    onClick={()=>props.onDecrement(props.id)} 
+                    className="btn btn-secondary btn-sm m-2" 
+                    disabled={props.counter.value===0 ? "disable":""}>-
+                </button>
+                <button 
+                    onClick={()=>props.onDelete(props.id)} 
+                    className="btn btn-danger btn-sm m-2">x
+                </button> 
             </div>
             
              
